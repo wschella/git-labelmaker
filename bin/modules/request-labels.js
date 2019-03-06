@@ -8,9 +8,10 @@
 
 
 const octonode = require('octonode');
+const ghurls = require('./github-urls');
 
 module.exports = (repo, token) => new Promise((res, rej) => {
-    octonode.client(token).get(`/repos/${repo}/labels`, { per_page: 100, }, (e, status, body) => {
+    octonode.client(token, { hostname: ghurls.api }).get(`/repos/${repo}/labels`, { per_page: 100, }, (e, status, body) => {
         if (e) return rej(e);
         return res(body);
     });

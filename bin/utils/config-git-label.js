@@ -5,9 +5,10 @@
  *    @return {Object} a config object for git-label
  */
 
+const ghurls = require('../modules/github-urls');
 
 module.exports = (repo, token) => ({
-    api:    'https://github.ugent.be/api/v3',
+    api: ghurls.api,
     repo,
     token,
 });
