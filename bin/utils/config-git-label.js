@@ -7,7 +7,7 @@
 
 
 module.exports = (repo, token) => ({
-    api:    'https://api.github.com',
+    api:    'https://github.ugent.be/api/v3',
     repo,
     token,
 });
